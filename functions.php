@@ -53,9 +53,9 @@ add_action( 'genesis_header', 'genesis_cta_before_navigation' );
 function genesis_cta_before_navigation(){
     echo '<div class="row">';
     echo '<div class="cta-one-half">';
-    echo '<div class="cta-one-number"><span class="city-one">Las Vegas</span><br /><span class="phone-number contact-number-one"> <a href="tel:7022403380" onmousedown="_gaq.push([\'_trackEvent\',\'Mobile\' \'Click to Call\'])">' . PHONE_NUMBER . '</a></span></div>';
+    echo '<div class="cta-one-number"><span class="city-one">Las Vegas</span><br /><span class="phone-number contact-number-one> <a href="tel:7022403380" onmousedown="_gaq.push([\'_trackEvent\',\'Mobile\' \'Click to Call\'])">' . PHONE_NUMBER . '</a></span></div>';
     echo '</div>';
     echo '<div class="cta-one-half">';
-    echo '<div class="cta-two-number"><span class="city-two">Henderson</span><br /><span class="phone-number contact-number-two"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(702) 556-3730</a></span></div>';
+    echo '<div class="cta-two-number"><span class="city-two">Henderson</span><br /><span class="phone-number contact-number-two"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(702) xxx-xxxx</a></span></div>';
     echo '</div></div>';   
 }

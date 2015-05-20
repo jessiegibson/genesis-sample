@@ -1579,6 +1579,21 @@ li.comment {
 	color:#fff;
 }
 
+.bottom-cta {
+	width: 75%;
+  	margin-left: auto;
+	margin-right: auto;
+	background-color:rgb(240,248,255);
+	color: #333;
+	padding: 25px;
+	border: 10px #2c80ff solid;
+	font-size:;
+}
+
+.bottom-cta h3 {
+	color:#333333;
+}
+
 
 
 /* # Media Queries
