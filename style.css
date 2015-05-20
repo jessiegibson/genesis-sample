@@ -947,7 +947,7 @@ img.alignright,
 .header-image .site-title > a {
 	background: url(images/logo.png) no-repeat left;
 	float: left;
-	min-height: 60px;
+	min-height: 100px;
 	width: 100%;
 }
 
@@ -1388,6 +1388,28 @@ li.comment {
 
 .site-footer p {
 	margin-bottom: 0;
+}
+
+/* # Call-to-Action Buttons
+---------------------------------------------------------------------------------------------------- */
+.cta-one-half {
+
+}
+
+.cta-one-number {
+
+}
+
+.cta-two-number {
+
+}
+
+.city-one {
+
+}
+
+.city-two {
+	
 }
 
 
