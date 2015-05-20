@@ -1065,7 +1065,7 @@ img.alignright,
 .title-area {
 	float: left;
 	padding: 0;
-	width: 360px;
+	width: 575px;
 }
 
 .header-full-width .title-area {
@@ -1087,7 +1087,7 @@ img.alignright,
 	background: url(images/logo.png) no-repeat left;
 	float: left;
 	min-height: 140px;
-	width: 100%;
+	width:60%;
     padding:0px;
 }
 
@@ -1114,7 +1114,7 @@ img.alignright,
 .site-header .widget-area {
 	float: right;
 	text-align: right;
-	width: 800px;
+	width: 625px;
 }
 
 
@@ -1280,7 +1280,7 @@ img.alignright,
 
 .entry {
 	margin-bottom: 40px;
-	padding: 50px 60px;
+	padding: 10px 0px;
 }
 
 .content .entry {
@@ -1540,10 +1540,9 @@ li.comment {
 /* # Call-to-Action Buttons
 ---------------------------------------------------------------------------------------------------- */
 .cta-one-half {
-	width: 49.999999%;
+	width: 100%;
   	margin-left: auto;
   	margin-right: auto;
-  	float: left;
 }
 
 .phone-number{
@@ -1613,7 +1612,8 @@ li.comment {
 	}
 
 	.content,
-	.site-header .widget-area {
+	.widget-area,
+	.site-header {
 		width: 620px;
 	}
 
@@ -1626,17 +1626,21 @@ li.comment {
 	.footer-widgets-1,
 	.footer-widgets-2,
 	.footer-widgets-3,
-	.sidebar-primary,
-	.title-area {
+	.sidebar-primary{
 		width: 300px;
 	}
+
+	.title-area {
+		width:420px;
+	}
+
 
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
     
      .header-image .site-title > a {
-	   background: url(images/logo.png)no-repeat left;
+	   background: url(images/logo-320.png)no-repeat left;
     }
     
     
