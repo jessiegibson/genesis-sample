@@ -5,7 +5,7 @@ Description: This is the sample theme created for the Genesis Framework.
 Author: StudioPress  
 Author URI: http://www.studiopress.com/  
 Template: genesis  
-Template Version: 2.2.0-beta1 
+Template Version: 2.1.2  
 Tags: black, orange, white, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, custom-menu, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready  
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
@@ -24,7 +24,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	- Gallery
 	- Forms
 	- Tables
-	- Screen reader text
 - Structure and Layout
 	- Site Containers
 	- Column Widths and Positions
@@ -40,12 +39,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 - Plugins
 	- Genesis eNews Extended
 	- Jetpack
-- Skip Links
 - Site Header
 	- Title Area
 	- Widget Area
 - Site Navigation
-	- Accessible menu
 	- Header Navigation
 	- Primary Navigation
 	- Secondary Navigation
@@ -102,7 +99,7 @@ input[type="search"] {
 .wrap:before {
 	content: " ";
 	display: table;
-}
+} 
 
 .author-box:after,
 .clearfix:after,
@@ -130,8 +127,8 @@ input[type="search"] {
 --------------------------------------------- */
 
 body {
-	background-color: #f5f5f5;
-	color: #333;
+	background-color: #333;
+	color: #fff;
 	font-family: Lato, sans-serif;
 	font-size: 18px;
 	font-weight: 300;
@@ -166,7 +163,7 @@ textarea:focus,
 }
 
 a {
-	color: #e5554e;
+	color: #2c80ff;
 	text-decoration: none;
 }
 
@@ -225,7 +222,7 @@ h3,
 h4,
 h5,
 h6 {
-	color: #333;
+	color: #fff;
 	font-family: Lato, sans-serif;
 	font-weight: 400;
 	line-height: 1.2;
@@ -375,12 +372,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 .button {
-	background-color: #333;
-	border: 0;
+	background-color: #e5554e;
+	border: none;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
-	font-weight: 300;
+	font-weight: 500;
 	padding: 16px 24px;
 	text-transform: uppercase;
 	width: auto;
@@ -426,6 +423,91 @@ input[type="search"]::-webkit-search-results-button {
 	display: none;
 }
 
+/* Color Buttons
+------------------------------------------------------------ */
+ 
+.button-blue,
+.button-gray,
+.button-green,
+.button-orange,
+.button-red,
+.button-white { /* The button-white will be white background with black border */
+    color: #fff;
+    margin-top:15px;
+    padding: 10px 10px;
+    line-height: 3em;
+    text-transform: uppercase;
+}
+ 
+.button-blue:hover,
+.button-gray:hover,
+.button-green:hover,
+.button-orange:hover,
+.button-red:hover,
+.button-yellow:hover {
+    text-decoration: none;
+}
+ 
+.button-blue {
+    background-color: #3498db;
+    border: 1px solid #999;
+}
+ 
+.button-blue:hover {
+    background-color: #83a2be;
+    border: 1px solid #000;
+}
+ 
+.button-gray {
+    background-color: #bdbdbd;
+    border: 1px solid #bdbdbd;
+}
+ 
+.button-gray:hover {
+    background-color: #919191;
+    border: 1px solid #000;
+}
+ 
+.button-green {
+    background-color: #27ae60;
+    border: 1px solid #27ae60;
+}
+ 
+.button-green:hover {
+    background-color: #27ae60;
+    border: 1px solid #000000;
+}
+ 
+.button-orange {
+    background-color: #f39c12;
+    border: 1px solid #f39c12;
+}
+ 
+.button-orange:hover {
+    background-color: #e67e22;
+    border: 1px solid #000;
+}
+ 
+.button-red {
+    background-color: #c0392b;
+    border: 1px solid #c0392b;
+}
+ 
+.button-red:hover {
+    background-color: #c78787;
+    border: 1px solid #000;
+}
+ 
+.button-white {
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+ 
+.button-white:hover {
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
 /* ## Tables
 --------------------------------------------- */
 
@@ -455,38 +537,6 @@ th {
 	font-weight: 400;
 }
 
-/* ## Screen reader text
---------------------------------------------- */
-
-.screen-reader-text,
-.screen-reader-text span,
-.screen-reader-shortcut {
-	position: absolute !important;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
-}
-
-.screen-reader-text:focus,
-.screen-reader-shortcut:focus,
-.genesis-nav-menu .search input[type="submit"]:focus,
-.widget_search input[type="submit"]:focus  {
-	clip: auto !important;
-	height: auto;
-	width: auto;
-	display: block;
-	font-size: 1em;
-	font-weight: bold;
-	padding: 15px 23px 14px;
-	color: #333;
-	background: #fff;
-	z-index: 100000; /* Above WP toolbar. */
-	text-decoration: none;
-	box-shadow: 0 0 2px 2px rgba(0,0,0,.6);
-}
-
 
 /* # Structure and Layout
 ---------------------------------------------------------------------------------------------------- */
@@ -502,7 +552,7 @@ th {
 
 .site-inner {
 	clear: both;
-	padding-top: 40px;
+	padding-top: 10px;
 }
 
 /* ## Column Widths and Positions
@@ -813,7 +863,7 @@ img.alignright,
 }
 
 .widget li li {
-	border: 0;
+	border: none;
 	margin: 0 0 0 30px;
 	padding: 0;
 }
@@ -826,6 +876,109 @@ img.alignright,
 .widget_calendar th {
 	text-align: center;
 }
+
+/* # Home Page
+---------------------------------------------------------------------------------------------------- */
+
+.home-top {
+      /* background: url(../img/lines.png) top repeat-x;
+      border: 1px solid #ccc; */
+      background-size: 8px 8px;
+      margin-bottom: 48px;
+      padding: 22px 7px 19px 7px;
+ }
+
+/* .home-middle widget sections are not at present in use as I am only using home-bottom for all the layout*/
+.home-middle {
+   overflow: hidden;
+ }
+
+.home-middle-left,
+.home-middle-right {
+      width: 200px;
+      /* background: url(../img/lines.png) top repeat-x;
+      border: 1px solid #ccc; */
+      background-size: 8px 8px;
+      margin-bottom: 48px;
+      padding: 22px 7px 19px 7px;
+}
+
+.home-middle-middle {
+      width: 30%;
+      /* background: url(../img/lines.png) top repeat-x;
+      border: 1px solid #ccc; */
+      background-size: 8px 8px;
+      margin: 0 15px 48px 15px;
+      padding: 22px 7px 19px 7px;
+}
+
+.home-middle-left {
+    float: left;
+}
+
+.home-middle-middle {
+      float: left;
+ }
+
+.home-middle-right {
+      float: right;
+ }
+
+.home-bottom .featured-content .widget-title {
+      margin: 20px auto;
+      font: bold 1.4em 'Open Sans', sans-serif, 'Bevan', ariel;
+      color: #544d4d;
+ }
+
+.home-bottom {
+      /*background: url(../img/lines.png) top repeat-x;
+      border: 1px solid #ccc;*/
+      background-size: 8px 8px;
+      margin-bottom: 48px;
+      padding: 22px 7px 19px 7px;
+ }
+
+/* Title of each category group */
+ .home-bottom .widget-title {
+    font: bold 22px 'Open Sans', sans-serif;
+    margin: 25px 0 10px 0;
+ /* border-bottom: 1px solid #ccc; */
+ }
+
+.home-bottom {
+    margin-bottom: 48px;
+    padding: 22px 7px 19px 7px;
+ }
+
+/* Each post column */
+ .home .post {
+    display: inline-block;
+    float: left;
+    width: 31%;
+    height: 380px;
+    padding: 2% 1.5% 1% 1.5%;
+    margin: 0 10px 30px 10px;
+    border: 2px solid #fef3e6;
+    -moz-box-shadow: 0 0 1px #fffaea;
+    box-shadow: 0 0 3px #fffaea;
+    background-color: #efefef;
+ }
+
+/* Thumbnail image */
+ .post-image {
+    width: 960px;
+ }
+
+/* Affects the More Posts from this Category link text */
+ .widget ul > li:last-child, .widget p:last-child {
+    margin-bottom: 50px;
+    clear: both;
+}
+
+/* Center the text below the sections that links to additional articles */
+ .more-from-category {
+    text-align: center;
+ }
 
 /* ## Featured Content
 --------------------------------------------- */
@@ -894,30 +1047,16 @@ img.alignright,
 }
 
 
-/* # Skip Links
----------------------------------------------------------------------------------------------------- */
-.genesis-skip-link li {
-	height: 0;
-	width: 0;
-	list-style: none;
-}
-
-/* Display outline on focus */
-:focus {
-	color: #333;
-	outline: #ccc solid 1px;
-}
-
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
-	min-height: 160px;
+	background-color: #333;
+
 }
 
 .site-header .wrap {
-	padding: 40px 0;
+	padding: 0px 0;
 }
 
 /* ## Title Area
@@ -925,7 +1064,7 @@ img.alignright,
 
 .title-area {
 	float: left;
-	padding: 10px 0;
+	padding: 0;
 	width: 360px;
 }
 
@@ -947,8 +1086,9 @@ img.alignright,
 .header-image .site-title > a {
 	background: url(images/logo.png) no-repeat left;
 	float: left;
-	min-height: 100px;
+	min-height: 140px;
 	width: 100%;
+    padding:0px;
 }
 
 .site-description {
@@ -1021,7 +1161,7 @@ img.alignright,
 .genesis-nav-menu .sub-menu a {
 	background-color: #fff;
 	border: 1px solid #eee;
-	border-top: 0;
+	border-top: none;
 	font-size: 14px;
 	padding: 20px;
 	position: relative;
@@ -1069,19 +1209,6 @@ img.alignright,
 	padding: 10px 0 0;
 }
 
-/* ## Accessible Menu
---------------------------------------------- */
-
-.menu .menu-item:focus {
-	position: static;
-}
-
-.menu .menu-item > a:focus + ul.sub-menu,
-.menu .menu-item.sfHover > ul.sub-menu {
-	left: auto;
-	opacity: 1;
-}
-
 /* ## Site Header Navigation
 --------------------------------------------- */
 
@@ -1096,6 +1223,25 @@ img.alignright,
 .site-header .genesis-nav-menu li li {
 	margin-left: 0;
 }
+
+.mobile-number {
+    display:none;
+    color:#c0392b;
+    font-size: 44px;
+    margin:10px 0px;
+}
+
+.widget-number {
+    text-align: center;
+    display: block;
+    font-size: 2em;
+    background-color: #c0392b;
+    border-radius: 10px;
+    color: #fff;
+    padding:10px 5px;
+    font-weight: 300;
+}
+
 
 /* ## Primary Navigation
 --------------------------------------------- */
@@ -1138,7 +1284,7 @@ img.alignright,
 }
 
 .content .entry {
-	background-color: #fff;
+	background-color: #333;
 }
 
 .entry-content ol,
@@ -1248,7 +1394,7 @@ p.entry-meta {
 li.comment {
 	background-color: #f5f5f5;
 	border: 2px solid #fff;
-	border-right: 0;
+	border-right: none;
 }
 
 .comment-content {
@@ -1312,9 +1458,9 @@ li.comment {
 }
 
 .sidebar .widget {
-	background-color: #fff;
-	margin-bottom: 40px;
-	padding: 40px;
+	background-color: #333;
+	margin-bottom: 10px;
+	padding: 25px;
 }
 
 
@@ -1379,7 +1525,7 @@ li.comment {
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #fff;
+	background-color: #333;
 	font-size: 16px;
 	line-height: 1;
 	padding: 40px 0;
@@ -1390,27 +1536,49 @@ li.comment {
 	margin-bottom: 0;
 }
 
+
 /* # Call-to-Action Buttons
 ---------------------------------------------------------------------------------------------------- */
 .cta-one-half {
-
+	width: 49.999999%;
+  	margin-left: auto;
+  	margin-right: auto;
+  	float: left;
 }
 
-.cta-one-number {
-
+.phone-number{
+    font-size:2em;
 }
 
+.cta-one-number, .cta-two-number {
+	text-align:center;
+    padding:10px 0px;
+    line-height: 1;
+    margin-top: 5px;
+    margin-left:5px;
+    margin-right:5px;
+    font-weight:700;
+}
+
+.contact-number-one a, .contact-number-two a{
+	color: #ffffff;
+}
+
+.cta-one-number{
+	background-color:#e5554e;
+    width:75%;
+    float:right;
+}
 .cta-two-number {
-
+	background-color:#95a5a6;
+    border:1px #7f8c8d solid;
+    width:75%;
 }
 
-.city-one {
-
+.city-one a, .city-two a{
+	color:#fff;
 }
 
-.city-two {
-	
-}
 
 
 /* # Media Queries
@@ -1451,8 +1619,17 @@ li.comment {
 	.footer-widgets-1 {
 		margin-right: 30px;
 	}
-
+    
+     .header-image .site-title > a {
+	   background: url(images/logo.png)no-repeat left;
+    }
+    
+    
+    .mobile-number{
+        display:none;
+    }  
 }
+
 
 @media only screen and (max-width: 960px) {
 
@@ -1480,6 +1657,8 @@ li.comment {
 
 	.site-header .wrap {
 		padding: 20px 5%;
+        margin-left:auto;
+        margin-right:auto;
 	}
 
 	.header-image .title-area {
@@ -1517,13 +1696,26 @@ li.comment {
 	.footer-widgets-1 {
 		margin-right: 0;
 	}
-
+    
+    .mobile-number{
+        display:block;
+        text-align: center;
+        padding:0px;
+    }    
+    .locksmith-tools{
+        display:none;
+    }
+    
+    .header-image .site-title > a {
+	   background: url(images/logo.png)no-repeat center;
+    }
+    
 }
 
 @media only screen and (max-width: 800px) {
 
 	body {
-		background-color: #fff;
+		background-color: #333;
 		font-size: 16px;
 	}
 
@@ -1567,4 +1759,43 @@ li.comment {
 		padding: 40px;
 	}
 
+    .mobile-number{
+        display:block;
+        text-align: center;
+        padding:0px;
+    }    
+    .locksmith-tools{
+        display:none;
+    }
+    
+    .header-image .site-title > a {
+	   background: url(images/logo.png) no-repeat center;
+        padding:0px;
+    }
+
 }
+
+@media only screen and (min-width: 1200px) {
+    .mobile-number{
+        display:none;
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .header-image .site-title > a {
+	   background: url(images/logo.png) no-repeat center;
+	   width: 100%;
+    }
+    
+    .locksmith-tools{
+        display:none;
+    }
+    .mobile-number {
+        text-align: center;
+        display: block;
+        background-color: #c0392b;
+        border-radius: 10px;
+        color: #fff;
+}
+/* # Call to Actions
+---------------------------------------------------------------------------------------------------- */

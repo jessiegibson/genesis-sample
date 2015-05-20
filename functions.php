@@ -5,7 +5,10 @@ include_once( get_template_directory() . '/lib/init.php' );
 //* Child theme (do not remove)
 define( 'CHILD_THEME_NAME', 'Genesis Sample Theme' );
 define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
-define( 'CHILD_THEME_VERSION', '2.2.0-beta' );
+define( 'CHILD_THEME_VERSION', '2.0-locksmith' );
+
+//* DEFINE THE WEBSITE CONSTANTS
+define( 'PHONE_NUMBER', '(702) 240-3380' );
 
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -37,7 +40,6 @@ function featured_post_image() {
 	the_post_thumbnail('featured-image');
 }
 
-
 // Remove Genesis Blog & Archive
 function genesis_remove_blog_archive( $templates ) {
 	unset( $templates['page_blog.php'] );
@@ -46,17 +48,14 @@ function genesis_remove_blog_archive( $templates ) {
 }
  
 //* Adds the Call-to-Action Phone Numbers to the Header
-
-add_action( 'genesis_before', 'genesis_cta_before_navigation' );
-=======
 add_action( 'genesis_header', 'genesis_cta_before_navigation' );
 
 function genesis_cta_before_navigation(){
     echo '<div class="row">';
     echo '<div class="cta-one-half">';
-    echo '<div class="nyc-contact-number"><span class="new-york">Five Boroughs</span><br /><span class="phone-number new-york"> <a href="tel:6467565386" onmousedown="_gaq.push([\'_trackEvent\',\'Mobile\' \'Click to Call\'])">(646) 756-5386</a></span></div>';
+    echo '<div class="cta-one-number"><span class="city-one">Las Vegas</span><br /><span class="phone-number contact-number-one"> <a href="tel:7022403380" onmousedown="_gaq.push([\'_trackEvent\',\'Mobile\' \'Click to Call\'])">' . PHONE_NUMBER . '</a></span></div>';
     echo '</div>';
     echo '<div class="cta-one-half">';
-    echo '<div class="long-island-number"><span class="long-island">Long Island</span><br /><span class="phone-number long-island"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(516) 200-4224</a></span></div>';
+    echo '<div class="cta-two-number"><span class="city-two">Henderson</span><br /><span class="phone-number contact-number-two"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(702) 556-3730</a></span></div>';
     echo '</div></div>';   
 }
