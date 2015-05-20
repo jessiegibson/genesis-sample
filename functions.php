@@ -9,6 +9,7 @@ define( 'CHILD_THEME_VERSION', '2.0-locksmith' );
 
 //* DEFINE THE WEBSITE CONSTANTS
 define( 'PHONE_NUMBER', '(702) 240-3380' );
+define( 'PHONE_NUMBER', '(702) 802-9114' );
 
 //* Enqueue Google Fonts
 add_action( 'wp_enqueue_scripts', 'genesis_sample_google_fonts' );
@@ -58,4 +59,12 @@ function genesis_cta_before_navigation(){
     echo '<div class="cta-one-half">';
     echo '<div class="cta-two-number"><span class="city-two">Henderson</span><br /><span class="phone-number contact-number-two"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(702) xxx-xxxx</a></span></div>';
     echo '</div></div>';   
+}
+
+// Removes the Title From the Home Page of the Site.
+add_action( 'get_header', 'remove_titles_home_page' );
+function remove_titles_home_page() {
+    if ( is_home() ) {
+        remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+    }
 }
