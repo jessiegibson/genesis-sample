@@ -58,12 +58,146 @@ function genesis_cta_before_navigation(){
     echo '<div class="cta-one-half">';
     echo '<div class="cta-one-number"><span class="city-one">Las Vegas</span><br /><span class="phone-number contact-number-one> <a href="tel:7022403380" onmousedown="_gaq.push([\'_trackEvent\',\'Mobile\' \'Click to Call\'])">' . PHONE_NUMBER . '</a></span></div>';
     echo '</div>';
-    // echo '<div class="cta-one-half">';
-    // echo '<div class="cta-two-number"><span class="city-two">Henderson</span><br /><span class="phone-number contact-number-two"><a href="tel:5162004224" onmousedown="_gaq.push([\'_trackEvent\', \'Mobile\', \'Click to Call\'])">(702) xxx-xxxx</a></span></div>';
     echo '</div>';   
 }
 
 // Removes the Title From the Home Page of the Site.
 if ( is_front_page () ){
-remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+    remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 }
+
+
+// ADDING CUSTOM POST TYPE - SERVICE AREAS
+add_action( 'init', 'vegas_locksmith_custom_post_type' );
+function vegas_locksmith_custom_post_type() {
+    $labels = array(
+        "name" => "Service Areas",
+        "singular_name" => "Service Area",
+        );
+
+    $args = array(
+        "labels" => $labels,
+        "description" => "Service Areas",
+        "public" => true,
+        "show_ui" => true,
+        "has_archive" => true,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array( "slug" => "servicearea", "with_front" => true ),
+        "query_var" => true,
+                        "supports" => array( "title", "editor", "excerpt", "trackbacks", "custom-fields", "comments", "revisions", "thumbnail", "author", "page-attributes", "post-formats" ), "taxonomies" => array( "category", "post_tag" ) );
+    register_post_type( "service_area", $args );
+
+   
+// End of vegas_locksmith_custom_post_type()
+}
+
+add_filter( 'genesis_superfish_enabled', '__return_true' );
+
+/* UPDATING THE CREDITS */
+
+add_filter('genesis_footer_creds_text', 'vegas_footer_creds_filter');
+function vegas_footer_creds_filter( $editthecredit ) {
+$editthecredit = '&copy; 2015 <a href="http://lasvegaslocksmith365.com">Las Vegas Locksmith 365</a>&nbsp;&middot;&nbsp;All Rights Reserved.&nbsp;';
+return $editthecredit ;
+}
+//*Please refer to the original post at my blog for full explaination of this snippet and other cheats
+
+function service_area_custom_fields(){
+    $serviceTitle = get_field('service_address_title');
+    $serviceAreaImage = get_field('service_area_featured_image');
+    $address = get_field('address');
+    $phoneNumber = get_field('phone_number');
+    $services = get_field('services');
+    $daysOpen = get_field('days');
+    $hoursOfOperation = get_field('hours_of_operation');
+    $serviceDescription = get_field('service_area_description');
+
+    if ( $serviceTitle || $serviceAreaImage || $address || $phoneNumber || $services || $daysOpen || $hoursOfOperation || $serviceDescription ) {
+        if ($serviceTitle) {
+            echo '<h1>' . $serviceTitle . '</h1>';
+        }
+        if ($serviceAreaImage) {
+            echo '<img src="' . $serviceAreaImage . '">';
+        }
+        if ($address){
+            echo '<address>' . $address . '</address>';
+        }
+        if ($phoneNumber){
+            echo '<a href="tel:' . $phoneNumber . '">' . $phoneNumber . '</a>';
+        }
+        if ($services){
+            echo '<ul>';
+            echo '<li>' . $services . '</li>';
+            echo '</ul>';
+        }
+        if ($daysOpen){
+            echo '<ul>';
+            echo '<li>' . $daysOpen . '</li>';
+            echo '</ul>';
+        }
+        if ($hoursOfOperation){
+            echo '<ul>';
+            echo '<li>' . $daysOpen . '</li>';
+            echo '</ul>';
+        }
+        if ($serviceDescription){
+            echo '<p>';
+            echo $daysOpen;
+            echo '</p>';
+        }
+    }
+}
+
+
+/* 
+*
+*   Adding the Facebook Page Like to Thirsty
+*/
+// add_action('genesis_before','thirsty_facebook_like');
+
+// function thirsty_facebook_like() {
+//     echo '<div id="fb-root"></div>
+//                 <script>(function(d, s, id) {
+//                     var js, fjs = d.getElementsByTagName(s)[0];
+//                     if (d.getElementById(id)) return;
+//                     js = d.createElement(s); js.id = id;
+//                     js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=250119945179409";
+//                     fjs.parentNode.insertBefore(js, fjs);
+//                     }(document, \'script\', \'facebook-jssdk\'));
+//                 </script>';
+// }
+
+// // Inserting the FB Page Like Box after the content of each page.
+// function thirsty_fb_after_content(){
+//     echo '<div class="fb-page"> 
+//             <span class="fb-like-text"><span>Like Thirsty on </span><span class="blue-text">Facebook</span></span><li class="fb-like">
+//             <div
+//             class="fb-like"
+//             width="48"
+//             data-href="https://www.facebook.com/thirstynyc" 
+//             data-layout="button_count"
+//             data-width="255" 
+//             data-action="like"
+//             data-show-facepile="true" 
+//             data-show-posts="false"
+//             data-share="false">
+//             <div class="fb-xfbml-parse-ignore">
+//             </div>
+//             </li>
+//             </ul>';
+// }
+
+// add_action('genesis_after_loop','thirsty_fb_after_content');
+
+
+
+
+
+
+
+
+

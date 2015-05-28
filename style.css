@@ -1595,6 +1595,48 @@ li.comment {
 
 
 
+/* # SERVICE AREA FORMATTING 
+---------------------------------------------------------------------------------------------------- */
+
+.area-entry:before {
+	clear:both;
+}
+/*  */ 
+.service-area-wrapper {
+	margin:10px auto;
+}
+
+.area-entry {
+	display:inline-block;
+	float:left;
+	position:relative;
+	background:#fff;
+	box-shadow: 5px 5px 4px 0.75;
+	height: 300px;
+	text-align: center;
+}
+div.area-entry:first-child{
+	margin-left:0px;
+}
+
+div.area-entry {
+	margin-left: 1%;
+	margin-bottom:10px;
+}
+
+.service-area-more {
+	position: absolute;
+  	text-align: center;
+  	background-color: #e5554e;
+  	width: 100%;
+  	bottom: -10%;
+  	padding: 10px;
+}
+
+.service-area-more a {
+	color:#fff;
+}
+
 /* # Media Queries
 ---------------------------------------------------------------------------------------------------- */
 
@@ -1726,7 +1768,7 @@ li.comment {
     }
     
     .header-image .site-title > a {
-	   background: url(images/logo.png)no-repeat center;
+	   background: url(images/logo-320.png)no-repeat center;
     }
     
 }
@@ -1788,7 +1830,7 @@ li.comment {
     }
     
     .header-image .site-title > a {
-	   background: url(images/logo.png) no-repeat center;
+	   background: url(images/logo-320.png) no-repeat center;
         padding:0px;
     }
 
@@ -1816,5 +1858,3 @@ li.comment {
         border-radius: 10px;
         color: #fff;
 }
-/* # Call to Actions
----------------------------------------------------------------------------------------------------- */
